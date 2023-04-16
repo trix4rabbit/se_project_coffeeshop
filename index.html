@@ -22,14 +22,113 @@
 </head>
 
 <body>
-<div class="page"> Testing ...
-    <header class="header"></header>
+<div class="page"> 
+    <header class="header">
+        <nav class="nav"> <!-- Requirement 1.3 nav block -->
+            <img src="./images/logo_coffee_shop.svg" alt="Practicum Library Logo" class="logo" />
+            <!-- Putting navigation links in a list is supposed to be the best practice of writing the semantic code since it allows screen readers to pause between each link instead of reading all the links as a sentence. -->
+            <ul class="nav__links">
+              <li>
+                <a class="nav__link" href="#menu">Menu</a>
+              </li>
+              <li>
+                <a class="nav__link" href="#recipes">Recipes</a>
+              </li>
+              <li>
+                <a class="nav__link" href="#reservation">Book a table</a>
+              </li>
+              <li>
+                <a class="nav__link" href="#contacts">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <h1 class="header__title">
+            <span class="header__span-accent">Special Coffee</span>
+            in the Practicum Library 
+          </h1>
+          <p class="header__description">
+            Welcome to our study zone! 
+            We've got the coffee to energize you and the cozy vibes to help you get creative.
+          </p>
+          <img  src="./images/inside_coffee_shop.png" 
+                alt="Illustration 'Inside the library'" 
+                class="header__image" />
+          <div class="header__footers">
+            <div class="header__hours">
+                <p class="header__paragraph">Hours</p>
+                <p class="header__paragraph">Monday - Friday (1000 - 1900)</p>
+                <p class="header__paragraph">Saturday - Sunday (1100 - 1800)</p>
+            </div>
+            <div class="header__address">200 Success Avenue, The Town of Practicum</div>
+          </div>
+    </header>
 
     <main class="content">
-        <section class="recipes"></section>
-        <section class="menu"></section>
-        <section class="reservation"></section>
-        <section class="about"></section>
+      <section class="recipes" id="recipes">
+        <h2 class="recipes__title">Recipes</h2>
+        <p class="recipes__subtitle">
+          Check out some recipes we've collected for your home-brewing
+          convenience:
+        </p>
+        <div class="recipes__videos">
+          <div>
+            <iframe
+              class="recipes__iframe"
+              id="frenchpress"
+              src="https://www.youtube.com/embed/j6VlT_jUVPc"
+              allowfullscreen
+            ></iframe>
+            <p class="recipes__video-caption">
+              <span>Aeropress recipe</span><span>~5 min</span>
+            </p>
+          </div>
+          <div>
+            <iframe
+            class="recipes__iframe"
+            id="aeropress"
+            src="https://www.youtube.com/embed/st571DYYTR8"
+            allowfullscreen
+          ></iframe>
+            <p class="recipes__video-caption">
+              <span>French press recipe</span><span>~15 min</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--
+        <section class="recipes" id="recipes">
+            <h2 class="recipes__title">Recipes</h2>
+            <p class="recipes__subtitle">
+              Check out some recipes we've collected for your home-brewing convience
+            </p>
+            <div class="recipes__videos">
+              <div>
+                <iframe
+                  class="recipes__iframe"
+                  id="aeropress"
+                  src="https://www.youtube.com/embed/j6VlT_jUVPc"
+                ></iframe>
+                <p class="recipes__video-caption">
+                  <span>Aeropress recipe</span><span>~5 min</span>
+                </p>
+              </div>
+              <div>
+                <iframe
+                  class="recipes__iframe"
+                  id="frenchpress"
+                  src="https://www.youtube.com/embed/st571DYYTR8"
+                ></iframe>
+                <p class="recipes__video-caption">
+                  <span>French press recipe</span><span>~15 min</span>
+                </p>
+              </div>
+            </div>
+        </section>
+      -->
+
+        <section class="menu" id="menu"></section>
+        <section class="reservation" id="reservation"></section>
+        <section class="about" id="about"></section>
     </main>
 
     <footer class="footer">
