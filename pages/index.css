@@ -209,3 +209,124 @@
     color: #ffffff 
   } 
     
+
+  .reservation {
+    background-color: #d9e7ff;
+    background-image: url(../images/background_reservation.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0 120px;
+    align-items: center;
+  }
+  
+  .reservation__title {
+    margin: 0 0 80px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 52px;
+  }
+  
+  .reservation__form {
+    width: 100%;
+    max-width: 385px;
+  }
+  
+  .form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 385px;
+    font-family: Noto-serif, "times new roman", serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    }
+    
+
+.form__fieldset {
+  display: flex;
+  flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  .form__label {
+  font-family: Inter, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  margin-bottom: 8px;
+  margin-top: 0%;
+  padding: 0;
+  }
+  
+  .form__input {
+    box-sizing: border-box;
+    box-shadow: none; 
+    border-radius: 4px;
+    height: 60px;
+    margin-bottom: 32px;
+    padding-left: 10px;
+    font-family: "Inter", Arial, sans-serif;
+    font-style: normal; 
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    border: solid 1px #838383; 
+    max-width: 385px; 
+    width: 100%; 
+    text-align: left; 
+  }
+  
+  .form__input::placeholder {
+    font-size: 16px;
+    color: #838383 ;
+  }
+  
+  .form__button {
+  cursor: pointer;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  height: 60px;
+  border: none;
+  border-radius: 4px;
+  background-color:#2f80ed ;
+  color: #ffffff;
+  width: 100%;
+  transition: opacity 3s ease 0s;
+  }
+  
+  .form__button:hover {
+    opacity: 70%;
+  }
+  
+  .form__checkbox {
+    border-radius: 2px;
+    background-color: #2f80ed;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  
+  .form__label_checkbox_checked {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
