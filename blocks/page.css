@@ -1,13 +1,11 @@
-@import url(../blocks/page.css);
-@import url(../vendor/normalize.css); 
 
-/*
 .page {
 
     min-width: 1100px;
     max-width: 1600px;
     margin: auto;
     font-family: "Inter", Arial, sans-serif;
+    /* font-family: "Noto Serif", 'Times New Roman', serif; */
     font-size: 16px;
     line-height: 20px;
 
@@ -145,6 +143,8 @@
     position: absolute;
     bottom: 40px;
     right: 80px;
+    /* position: relative; */
+    /* right: 80px; */
   }
 
 
@@ -233,6 +233,7 @@
   .card__list-divider {
     display: block;
     min-width: 50px;
+    /* height: 1px; */
     margin: 0 10px;
     flex-grow: 1;
     margin-left: 8px;
@@ -598,4 +599,4 @@ left: -129px;
       font-size: 16px;
       line-height: 20px;
     }
-    */
+    
