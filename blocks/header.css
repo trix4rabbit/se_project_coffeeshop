@@ -10,10 +10,10 @@
   background-image: url("../images/background_header.svg");
   background-size: cover;
   background-repeat: no-repeat;
-
 }
 
 .header__title {
+    position: relative;
     left: 80px;
     max-width: 729px;
     margin-top: 202px;
@@ -39,6 +39,7 @@
   }
 
   .header__description {
+    position: relative;
     left: 80px;
     max-width: 683px;
     margin-top: 28px;
@@ -60,14 +61,9 @@
   
   .header__footers {
 
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    box-sizing: border-box;
-
-
-
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 40px;
 
     font-family: "Inter", Arial, sans-serif;
     font-style: normal;
@@ -76,19 +72,17 @@
     line-height: 20px;
     color: #838383;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
   }
 
   .header__hours {
-    position: absolute;
-    left: 80px;
-    bottom: 40px;
+  }
+
+  .header__paragraph {
   }
 
   .header__address {
-    position: absolute;
-    bottom: 40px;
-    right: 80px;
-    /* position: relative; */
-    /* right: 80px; */
   }
