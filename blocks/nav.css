@@ -5,32 +5,31 @@
   }
   
   .nav__links {
+    position: absolute;
     top: 30px;
     right: 80px;
-    margin: 20px 0 0;
-    display: flex;
-    column-gap: 20px;
-    list-style: none;
-    padding: 0px 0px 0px 0px;
 
-  }
-  
-  .nav__links-font {
+    column-gap: 20px;
+
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+
     font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
   }
-
-  .nav__link:hover {
-    color: #1f69c9;
-  }
   
+
   .nav__link {
     text-decoration: none;
-    font-weight: bold;
-
+    transition: color 0.5s ease-in-out;
     color: #000000;
   }
 
+  .nav__link:hover {
+    color: #2f80ed;
+  }
+  
