@@ -130,11 +130,11 @@ According to stage 2 section 1.1 Header # 11 of the brief.
   }
 
   .header__paragraph {
-    z-index: 1;
-    color: #6f6f6f;
+    margin-top: auto;
   }
     */
 
+    /* The only time I got it to work was to using position: absolute and use a difference class name for the address */
     position: absolute;
     bottom: 40px;
     left: 80px;
@@ -173,5 +173,17 @@ According to stage 2 section 1.1 Header # 11 of the brief.
 
   /* 
 Please give me detail on how to do this.  As mentioned before.. I been at this for days. 
+
+The code from the footer has the copyright block outside of the footer__content.  
+Thus I can use flex in the footer class to align footer__copyright below footer_content.
+Then I can us flex and justify-content in the footer__content 
+to put the logo on the left side and social media links on the right.
+
+Note: It uses a difference class name, and allowed me to place the blocks on the same level. 
+
+This requirement for 1.1 #11-14 uses the same class name, places them all in the same block.
+Which I can do with flexbox, but I just don't know how to get it positioned on the bottom. 
+
+Please be detail in the feedback and let me know what I am doing wrong.
 
   */
