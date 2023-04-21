@@ -5,7 +5,6 @@
     padding-bottom: 60px;
     padding-right: 100px;
     padding-left: 80px;
-  
     }
     
     .footer__content {
@@ -44,7 +43,7 @@
     }
     
     .footer__social-link {
-      color: #C1C1C1;
+      color: white;
       text-decoration: none;
       transition: color 0.3s linear;
 
@@ -69,7 +68,6 @@
     .footer__copyright {
       padding-top: 108px;
       margin: 0;
-
 
       font-family: "Inter", Arial, sans-serif;
       font-style: normal;
