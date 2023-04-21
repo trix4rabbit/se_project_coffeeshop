@@ -1,9 +1,11 @@
 .form {
+    max-width: 385px;
+    width: 100%;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 385px;
 
     font-family: Noto-serif, "times new roman", serif;
     font-style: normal;
@@ -31,6 +33,18 @@
   margin-bottom: 8px;
   margin-top: 0%;
   padding: 0;
+  }
+  
+  .form__label_type_checkbox {
+    margin-top: 32px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
   }
   
   .form__input {
@@ -93,14 +107,3 @@
     margin-right: 12px;
   }
   
-  .form__label_type_checkbox {
-    margin-top: 32px;
-    margin-bottom: 0px;
-    display: flex;
-    justify-content: center;
-    
-    font-family: "Inter", Arial, sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-  }

@@ -55,16 +55,35 @@
     z-index: -1;
   }
   
-  .header__footers {
-
-    padding-top: 200px;
-
-
+  .header__footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     box-sizing: border-box;
+    margin: 0px;
+    padding-bottom: 40px;
     
+    /*
+The header__footer has to use the following flex
+
+1. justify-content: space-between => to put the hours block on left and address block on right
+For example
+
+Hour                                                            Address
+
+2. align-items: flex-end;  => This put the address on the bottom. 
+Hour
+Monday
+Saturday                                                      Address
+
+Without it it would be like
+
+Hour                                                          Address
+Monday ...
+Satursday ...
+
+*/
+
     color: #838383;
 
     font-family: "Inter", Arial, sans-serif;
@@ -75,14 +94,84 @@
 
   }
 
+
+/*
+I been at this for days.  I asked and check on discord - no reply.  
+I just don't know how to get the footer text to be in the correct spot.  
+
+According to stage 2 section 1.1 Header # 11 of the brief.
+
+#11 to 14. block: header, element paragraph.  Which translates to the following code in index.html
+<div class="header__footer">
+    <div class="header__hours">
+        <p class="header__paragraph">Hours</p>
+        <p class="header__paragraph">Monday - Friday (1000 - 1900)</p>
+        <p class="header__paragraph">Saturday - Sunday (1100 - 1800)</p>
+    </div>
+  <p class="header__address">200 Success Avenue, The Town of Practicum</p>  
+</div>
+
+*/
+
+
+
+.header__hours {
+    /* 
+    Feedback say to remove line below using padding.      
+    padding-top: 120px; 
+
+    Code below is based on the feedback.  
+    It does not work.   The footer does not appear at the bottom. 
+  
   .header__hours {
     display: flex;
     flex-direction: column;
+    padding-bottom: 40px;
   }
 
   .header__paragraph {
+    z-index: 1;
+    color: #6f6f6f;
+  }
+    */
+
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+
+    display: flex;
+    flex-direction: column;
+
+/* 
+    the header__hours uses flex-direction of column do the block below would be aligned as follows
+    Hours
+    Monday ...
+    Saturday ...
+*/
+  }
+
+  .header__paragraph {
+
     margin: 0;
     z-index: 1;
 
     color: #6f6f6f;
   }
+
+  /* I used a difference class rather than using Header__paragraph.   
+  (Which was flagged in an earlier review)
+  
+  As explained before, I just don't know how to use the same class (header__paragraph)
+  and get it to look like the brief without using position: absolute.  
+  */
+
+  .header__address  {
+    position: absolute;
+    right: 80px;
+    bottom: 40px;
+  }
+
+  /* 
+Please give me detail on how to do this.  As mentioned before.. I been at this for days. 
+
+  */
