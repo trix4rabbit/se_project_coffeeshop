@@ -1,13 +1,6 @@
 .recipes {
-    background-color: #0a2759;
     color: #ffffff;
-
-    
-    background-image: url(../images/background_recipes.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
+    background: url("../images/background_recipes.svg") no-repeat center center/cover #0a2759;
     padding-left: 80px;
     padding-bottom: 215px;
   }

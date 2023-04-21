@@ -1,8 +1,7 @@
 
 .menu {
     width: 100%;
-    background-color: #ffffff;
-    background: url("../images/background_menu.svg") no-repeat center center/cover;
+    background: url("../images/background_menu.svg") no-repeat center center/cover #ffffff;
 
     display: flex;
     position: relative;

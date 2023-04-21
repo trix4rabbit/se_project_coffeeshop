@@ -6,9 +6,8 @@
   position: relative;
   box-sizing: border-box;
 
-  background-color: #ffffff;
-  background: url("../images/background_header.svg") no-repeat center center/cover;
-  z-index: -1;
+  background: url("../images/background_header.svg") no-repeat center center/cover #ffffff;
+  z-index: 2;
 }
 
 .header__title {
@@ -57,7 +56,9 @@
   }
   
   .header__footers {
+
     padding-top: 200px;
+
 
     display: flex;
     justify-content: space-between;
@@ -72,6 +73,11 @@
     font-size: 16px;
     line-height: 20px;
 
+  }
+
+  .header__hours {
+    display: flex;
+    flex-direction: column;
   }
 
   .header__paragraph {
