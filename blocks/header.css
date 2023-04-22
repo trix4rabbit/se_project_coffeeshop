@@ -2,12 +2,56 @@
   height: 100vh;
   min-height: 720px;
   max-height: 800px;
-  padding: 30px 80px 0;
+  padding: 30px 80px 40px 80px;
   position: relative;
   box-sizing: border-box;
 
   background: url("../images/background_header.svg") no-repeat center center/cover #ffffff;
-  z-index: 2;
+  z-index: 1;
+
+
+  display: flex;
+  flex-direction: column;
+
+  /* Per feedback 
+  The code means all blocks under header will be along the main-axis or 
+
+  Logo                  => This uses position: absolute; which places the image on the upper left
+  Nav                   => This uses flex-end which places the navigation links on the right.
+  header__title         => The margin-top allows it to be placed belowthe logo by 202px
+  header__description   => The margin-top gave a space of 28px between the title and description
+  header__image         => This uses position: absolute; which places the image on the right 
+  header__footer        => This used margin-top: auto; to generate the correct margin to push the footer down
+
+
+  (padding-top in header class)
+  Logo
+  (margin-top:202px in header__title)
+                                                    Image
+  Title                                             Image
+  (margin-top: 28px in header__description)         Image  
+  Description                                       Image  
+                                                    Image
+                                                    Image
+  (margin-top: auto in header__footer)              Image
+  Header Footer
+  (padding-bottom: 40px from the header)
+
+  => This works because.. (according to online explanation)
+  the margin-auto will take up the remaining margin between the header__description and header__footer class
+  thus conviently push the footer down toward the bottom of the page. 
+
+  According to https://hackernoon.com/flexbox-s-best-kept-secret-bd3d892826b6
+  "This same technique can be applied vertically as well along the main axis when using flex-direction: column. 
+  In this example, justify-content: space-around is applied to the flex container 
+  and margin-top: auto is used on the button to push the call-to-action button 
+  and the text to the bottom of the flex container. " ... Note that you need to have a height applied to the flex container in order to see this in action.
+
+  According to https://www.w3.org/TR/css-flexbox-1/?ref=hackernoon.com#auto-margins
+  "any positive free space is distributed to auto margins in that dimension...
+  Note: If free space is distributed to auto margins, the alignment properties will have no effect 
+  in that dimension because the margins will have stolen all the free space left over after flexing."
+  */
 }
 
 .header__title {
@@ -24,20 +68,20 @@
   }
 
   .header__span-accent {
+    display: block;
+
+    color: #2F80ED;
+
     font-family: "Noto Serif", 'Times New Roman', serif; 
     font-style: italic;
     font-weight: normal;
     font-size: 60px;
     line-height: 72px;
-    color: #2F80ED;
-
-    display: block;
   }
 
   .header__description {
     max-width: 683px;
     margin-top: 28px;
-    margin-bottom: 0px;
 
     font-family: "Noto Serif", 'Times New Roman', serif; 
     font-style: normal;
@@ -50,20 +94,34 @@
     position: absolute;
     right: 5px;
     top: 124px;
+    
     width: 646px;
     height: 568px;
     z-index: -1;
   }
   
   .header__footer {
+    /* Per feedback */
+    margin-top: auto;   
+
+    /* restored code to submission 5 */
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     box-sizing: border-box;
-    margin: 0px;
-    padding-bottom: 40px;
     
-    /*
+    z-index: 1;
+    color: #838383;
+
+    font-family: "Inter", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+  }
+
+/*
 The header__footer has to use the following flex
 
 1. justify-content: space-between => to put the hours block on left and address block on right
@@ -84,106 +142,32 @@ Satursday ...
 
 */
 
-    color: #838383;
-
-    font-family: "Inter", Arial, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-
-  }
-
-
-/*
-I been at this for days.  I asked and check on discord - no reply.  
-I just don't know how to get the footer text to be in the correct spot.  
-
-According to stage 2 section 1.1 Header # 11 of the brief.
-
-#11 to 14. block: header, element paragraph.  Which translates to the following code in index.html
-<div class="header__footer">
-    <div class="header__hours">
-        <p class="header__paragraph">Hours</p>
-        <p class="header__paragraph">Monday - Friday (1000 - 1900)</p>
-        <p class="header__paragraph">Saturday - Sunday (1100 - 1800)</p>
-    </div>
-  <p class="header__address">200 Success Avenue, The Town of Practicum</p>  
-</div>
-
-*/
-
-
-
-.header__hours {
-    /* 
-    Feedback say to remove line below using padding.      
-    padding-top: 120px; 
-
-    Code below is based on the feedback.  
-    It does not work.   The footer does not appear at the bottom. 
-  
+/* Nothing in hours.. if I understood the feedback correctly */
   .header__hours {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 40px;
   }
 
   .header__paragraph {
-    margin-top: auto;
-  }
-    */
+    margin: 0px;
 
-    /* The only time I got it to work was to using position: absolute and use a difference class name for the address */
-    position: absolute;
-    bottom: 40px;
-    left: 80px;
+  /* Added margin: 0; so that there are no spaces and will look like the following
+  Hours:
+  Monday ...
+  Satursday ...
 
-    display: flex;
-    flex-direction: column;
-
-/* 
-    the header__hours uses flex-direction of column do the block below would be aligned as follows
-    Hours
-    Monday ...
-    Saturday ...
-*/
-  }
-
-  .header__paragraph {
-
-    margin: 0;
-    z-index: 1;
+  without it in the header__paragraph, it would use default margin (or margin from somewhere) and look like the following
+  Hours:
+  (extra line here)
+  Monday ...
+  (extra line here)
+  Saturday ...
+  (extra line here)
+  
+  Somehow there is margin applied by default somewhere.  
+  Perhaps this is why why a lot of feedback was about margin reset;
+  
+  I tried to place margin: 0px in the header__footer (the class about this), 
+  but for some reason that was not inherited down to the herader__paragraph
+  */
 
     color: #6f6f6f;
   }
-
-  /* I used a difference class rather than using Header__paragraph.   
-  (Which was flagged in an earlier review)
-  
-  As explained before, I just don't know how to use the same class (header__paragraph)
-  and get it to look like the brief without using position: absolute.  
-  */
-
-  .header__address  {
-    position: absolute;
-    right: 80px;
-    bottom: 40px;
-  }
-
-  /* 
-Please give me detail on how to do this.  As mentioned before.. I been at this for days. 
-
-The code from the footer has the copyright block outside of the footer__content.  
-Thus I can use flex in the footer class to align footer__copyright below footer_content.
-Then I can us flex and justify-content in the footer__content 
-to put the logo on the left side and social media links on the right.
-
-Note: It uses a difference class name, and allowed me to place the blocks on the same level. 
-
-This requirement for 1.1 #11-14 uses the same class name, places them all in the same block.
-Which I can do with flexbox, but I just don't know how to get it positioned on the bottom. 
-
-Please be detail in the feedback and let me know what I am doing wrong.
-
-  */

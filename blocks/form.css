@@ -24,15 +24,16 @@
   }
   
   .form__label {
+  position: relative;
+  margin-bottom: 8px;
+  margin-top: 0%;
+  padding: 0;
+
   font-family: Inter, Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  position: relative;
-  margin-bottom: 8px;
-  margin-top: 0%;
-  padding: 0;
   }
   
   .form__label_type_checkbox {
@@ -41,10 +42,6 @@
     display: flex;
     justify-content: center;
     
-    font-family: "Inter", Arial, sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
   }
   
   .form__input {
