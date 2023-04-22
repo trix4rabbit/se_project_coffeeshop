@@ -11,31 +11,41 @@
 
 
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
 
-  /* Per feedback 
-  The code means all blocks under header will be along the main-axis or 
+  /* Great feedback !!! Thank you !!! */
 
-  Logo                  => This uses position: absolute; which places the image on the upper left
+  /* Per feedback - Keeping the comments in header.css for future references.   
+  The display:flex; and flex-direction: column; means all blocks under header will be along the main-axis or 
+
+  Logo                  => This uses position: absolute; which places the image on the upper left..
   Nav                   => This uses flex-end which places the navigation links on the right.
-  header__title         => The margin-top allows it to be placed belowthe logo by 202px
-  header__description   => The margin-top gave a space of 28px between the title and description
-  header__image         => This uses position: absolute; which places the image on the right 
-  header__footer        => This used margin-top: auto; to generate the correct margin to push the footer down
+  header__title         => The margin-top allows it to be placed belowthe logo by 202px.
+  header__description   => The margin-top gave a space of 28px between the title and description.
+  header__image         => This uses position: absolute; which places the image on the right. 
+  header__footer        => This used margin-top: auto; to generate the correct margin to push the footer down.   
+                            margin-top takes all available space verically because flex & flex-direction: column;
+                            if it was flex-direction: row, then it would take all available space horizontally 
+                            header__description class and itself.  
+                            margin-top didn't work when the display: flex; and flex-direction: column code was removed. 
 
+In terms of spacing. From the feedback / review. 
+Since the logo position is absolute, it's out of the flow.  
+The margin-top allows the header__title to be placed below the nav by 202px.. 
+Thus the spacing of the header page is as follows
 
-  (padding-top in header class)
-  Logo
-  (margin-top:202px in header__title)
-                                                    Image
-  Title                                             Image
-  (margin-top: 28px in header__description)         Image  
-  Description                                       Image  
-                                                    Image
-                                                    Image
-  (margin-top: auto in header__footer)              Image
-  Header Footer
-  (padding-bottom: 40px from the header)
+(30px from padding-top in class header )
+    nav
+                                                          Image
+(202px from margin-top in class header__title)            Image
+    Title                                                 Image
+(29px from margin-top in clasee header__description)      Image  
+    Description                                           Image  
+                                                          Image
+                                                          Image
+(margin-top: auto in header__footer)                      Image
+    Header Footer
+(padding-bottom: 40px from the header)
 
   => This works because.. (according to online explanation)
   the margin-auto will take up the remaining margin between the header__description and header__footer class
@@ -45,13 +55,14 @@
   "This same technique can be applied vertically as well along the main axis when using flex-direction: column. 
   In this example, justify-content: space-around is applied to the flex container 
   and margin-top: auto is used on the button to push the call-to-action button 
-  and the text to the bottom of the flex container. " ... Note that you need to have a height applied to the flex container in order to see this in action.
+  and the text to the bottom of the flex container. ... 
+  Note that you need to have a height applied to the flex container in order to see this in action."
 
   According to https://www.w3.org/TR/css-flexbox-1/?ref=hackernoon.com#auto-margins
   "any positive free space is distributed to auto margins in that dimension...
   Note: If free space is distributed to auto margins, the alignment properties will have no effect 
   in that dimension because the margins will have stolen all the free space left over after flexing."
-  */
+*/
 }
 
 .header__title {
@@ -127,7 +138,7 @@ The header__footer has to use the following flex
 1. justify-content: space-between => to put the hours block on left and address block on right
 For example
 
-Hour                                                            Address
+Hour                                                         Address
 
 2. align-items: flex-end;  => This put the address on the bottom. 
 Hour
@@ -141,10 +152,6 @@ Monday ...
 Satursday ...
 
 */
-
-/* Nothing in hours.. if I understood the feedback correctly */
-  .header__hours {
-  }
 
   .header__paragraph {
     margin: 0px;
@@ -162,11 +169,17 @@ Satursday ...
   Saturday ...
   (extra line here)
   
-  Somehow there is margin applied by default somewhere.  
-  Perhaps this is why why a lot of feedback was about margin reset;
-  
-  I tried to place margin: 0px in the header__footer (the class about this), 
-  but for some reason that was not inherited down to the herader__paragraph
+  According to https://www.w3schools.com/cssref/css_default_values.php
+  <p> anchor tag has the following default properites
+
+   	display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+
+    The margin-top: 1em and margin-bottom: 1em causes the extra spaces if margin: 0px; is NOT specified.   
+    Adding margin: 0px to its parent (.header__footer) class won't help.  
   */
 
     color: #6f6f6f;
