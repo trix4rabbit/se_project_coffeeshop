@@ -20,7 +20,7 @@
 
   Logo                  => This uses position: absolute; which places the image on the upper left..
   Nav                   => This uses flex-end which places the navigation links on the right.
-  header__title         => The margin-top allows it to be placed belowthe logo by 202px.
+  header__title         => The margin-top allows it to be placed below the nav by 202px.
   header__description   => The margin-top gave a space of 28px between the title and description.
   header__image         => This uses position: absolute; which places the image on the right. 
   header__footer        => This used margin-top: auto; to generate the correct margin to push the footer down.   
